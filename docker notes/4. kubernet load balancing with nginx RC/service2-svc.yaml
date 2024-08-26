@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: server2-service
+spec:
+  type: NodePort  # Ensures the service is accessible from outside the cluster via a NodePort
+  selector:
+    app: nginx-service2  # Matches the labels in the Pods managed by the ReplicationController
+  ports:
+    - protocol: TCP
+      port: 80            # Port that the service will expose
+      targetPort: 80      # Port on the container to which traffic will be directed
+      nodePort: 30022     # Port on each node to access the service

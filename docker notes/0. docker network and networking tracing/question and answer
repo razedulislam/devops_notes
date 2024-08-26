@@ -1,0 +1,143 @@
+
+1. What is Docker?
+Docker is a tool used to create containers. These containers are lightweight, standalone, and executable software packages that include everything needed to run a piece of software, including the code, runtime, system tools, libraries, and settings. By using Docker, we can create multiple containers, each acting as a separate virtual machine or OS instance.
+
+2. What is a Container?
+Docker Container: A container is an element of Docker used to deploy services and run applications. In Docker, containers can be used individually.
+Kubernetes Container: In Kubernetes, a container cannot be used individually; it runs inside a Pod.
+
+3. What is a Pod?
+Smallest Unit: A Pod is the smallest deployable unit in Kubernetes.
+Multiple Containers: A single Pod can contain multiple containers.
+IP Address: Each Pod has its own IP address.
+Pod Dependency: Kubernetes cannot run a container without a Pod.
+Limitations:
+No built-in auto-scaling or default healing, but these can be achieved using higher-level Kubernetes objects like ReplicationController.
+If a Pod crashes, it can be fixed by higher-level objects like ReplicationController.
+
+4. Why Do We Need a Pod Instead of a Container?
+Containers typically run a single process. Pods can group multiple related containers, allowing them to share resources and easily handle multiple processes.
+
+5. How to Create a Container?
+We can create a container by pulling an image from a public registry (e.g., Docker Hub).
+
+6. What is an Image and Why is it Used?
+An image acts as a template for creating containers. Each image works like a machine. Containers created from images are isolated from other processes and containers but share resources with the host machine, allowing efficient use of memory and resources.
+
+7. What is a ReplicationController?
+A ReplicationController ensures that a specified number of pod replicas are running at all times. It replaces missing pods with new ones to maintain the desired number of replicas.
+
+8. What is a ReplicaSet?
+ReplicaSets are similar to ReplicationControllers but support both equality-based and set-based selectors for more flexible and expressive pod management.
+
+9. What is a Service?
+A Service in Kubernetes provides a stable IP address and DNS name to a set of Pods, ensuring consistent access despite changes in Pod IPs. It also load balances traffic across the Pods.
+
+10. What is a Node?
+A Node is a host machine in a Kubernetes cluster. It provides the necessary resources for running Pods.
+
+11. What is a Load Balancer?
+A Load Balancer distributes incoming traffic across multiple Pods to ensure no single Pod is overwhelmed. Nginx can be used as a load balancer.
+
+12. Why Expose an External IP?
+Pods cannot be accessed externally by default. Exposing an external IP allows access to the services from outside the cluster. LoadBalancer services help expose an external IP for worldwide access.
+
+13. Cluster, Node, Pod, Container, Application Flow Diagram:
+rust
+Copy code
+Cluster --> Node --> Pod --> Container --> Application
+
+14. What is a Cluster?
+A cluster is a group of computers or servers working together as a single system, providing greater performance, scalability, and reliability.
+
+15. What is Vagrant and Why Use It?
+Vagrant is a tool for automating virtual machine setup. It simplifies VM creation and management through configuration files, eliminating the need for manual installation.
+
+16. What is Kubernetes?
+Kubernetes (K8s) is an open-source container orchestration tool developed by Google. It automates the deployment, scaling, and management of containerized applications.
+
+17. What is a Vertical Pod Autoscaler (VPA)?
+A Vertical Pod Autoscaler automatically adjusts the CPU and memory reservations for containers based on usage.
+
+18. What is a Horizontal Pod Autoscaler (HPA)?
+A Horizontal Pod Autoscaler automatically scales the number of Pods in a deployment or replica set based on observed CPU utilization or other custom metrics.
+
+19.  What is Helm?
+Helm is a package manager for Kubernetes. It allows you to define, install, and upgrade complex Kubernetes applications using charts, which are collections of files that describe a related set of Kubernetes resources.
+
+20. What is a PersistentVolume (PV)?
+A PersistentVolume is a piece of storage in the cluster that has been provisioned by an administrator or dynamically provisioned using Storage Classes. It abstracts the details of how storage is provided.
+
+21. What is an Ingress?
+An Ingress is an API object that manages external access to the services in a cluster, typically HTTP. It provides load balancing, SSL termination, and name-based virtual hosting.
+
+22. What is a CronJob?
+A CronJob creates Jobs on a scheduled basis. It is useful for running periodic tasks such as backups or report generation.
+
+23.  What is a StatefulSet?
+StatefulSet is a Kubernetes workload API object used to manage stateful applications. It manages the deployment and scaling of a set of Pods and provides guarantees about the ordering and uniqueness of these Pods.
+
+24. What is a Namespace?
+A namespace is a way to divide cluster resources between multiple users or applications. It provides a scope for names, allowing you to create resources with the same name in different namespaces without conflict.
+    
+    1. Isolation: Resources in one namespace are logically isolated from those in other namespaces.
+    2. Resource Quotas: You can set resource quotas on namespaces to limit resource consumption.
+    3. Security: Namespaces can help manage access controls and permissions.
+
+25. What is master node ?
+26. What is worker node ?
+
+27. Explain about master node component?
+
+
+1.	API server:  
+•	the api server works as a gateway of cluster and is the entry point for all REST commands to the cluster. 
+
+•	When you want to deploy a new application in a kubernets cluster, you interact with the API server using a client, it may be UI like kubernets dashboard or command line tool like kubectl. 
+
+•	The api server works as a gatekeeper for authentication and ensure only authenticated and authorized requests get through to the cluster.
+
+•	If your request is validated, the API server forwards it to other processes to schedule the pod.
+
+2.	Scheduler :
+
+•	The scheduler is another master nodo process responsible for scheduling new pods on worker nodes.
+
+•	After the api server validate your request to schedule a new pod, it hands it over to the scheduker.
+
+•	The scheduler intelligently decides which specific worker nodes should host the next pod or components.
+
+•	It first , examines your request to determine the resources need by applications , such as CPU and RAM
+
+•	Then it scans through the worker nodes to see available resources. After examines available resources worker nodes host new pods or application or components in a nodes.
+
+
+28. Comparing a ReplicaSet to a ReplicationController
+
+A ReplicaSet behaves exactly like a ReplicationController, but it has more expressive pod selectors. Whereas a ReplicationController’s label selector only allows matching pods that include a certain label, a ReplicaSet’s selector also allows matching pods that lack a certain label or pods that include a certain label key, regardless of its value. Also, for example, a single ReplicationController can’t match pods with the label env=production and those with the label env=devel at the same time. It can only match either pods with the env=production label or pods with the env=devel label. But a single ReplicaSet can match both sets of pods and treat them as a single group. Similarly, a ReplicationController can’t match pods based merely on the presence of a label key, regardless of its value, whereas a ReplicaSet can. For example, a ReplicaSet can match all pods that include a label with the key env, whatever its actual value is (you can think of it as env=*).
+
+
+1. Pod Communication:
+
+Pods communicate with each other or with external resources via Services. A Pod doesn't need to know the IP 
+addresses of other Pods directly; it interacts with them through a Service, which abstracts away the complexity.
+
+2. Service Communication:
+
+When a request is directed at a Service, Kubernetes routes the request to one of the Pods that match the Service’s label selector. 
+This selection process includes built-in load balancing, where requests are distributed among all available Pods.
+
+3. External Load Balancing:
+
+If your application needs to handle external traffic, a load balancer (such as Nginx in your Docker setup) can be configured to route 
+incoming traffic to various Kubernetes Services. These Services, in turn, route traffic to the appropriate Pods. 
+This setup ensures that external users can reach your application while maintaining a balanced load distribution across your application’s 
+instances.
+
+Example Workflow:
+1. External User Request: An external user sends a request to your application’s URL.
+2. Nginx Load Balancer: The request first hits the Nginx load balancer, which is configured to route requests to one of the Kubernetes Services.
+3. Service Routing: The Service then forwards the request to one of the Pods it manages, ensuring that the traffic is balanced across 
+multiple instances of the application.
+4. Pod Handling: The selected Pod processes the request and returns the response, which is then routed back through the Service, 
+load balancer, and finally to the external user.

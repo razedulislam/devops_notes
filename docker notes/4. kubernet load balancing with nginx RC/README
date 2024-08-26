@@ -2,25 +2,35 @@ diagram of this project:
 https://prnt.sc/HUIljZAWzggT
 just me an open source(vagrant niye video)
 
-#try to install kubernets using vagrant
-#virtual box
-
+#use this command every new container(ubuntu server) after creating pod
 apt update -y
 apt install net-tools -y
 apt install tcpdump -y
 apt install vim -y
-
-# Install ping command for network testing
 apt install iputils-ping -y
+
+
+# Build a Docker image and tag it for Docker Hub
+docker build -t <dockerhub account id name>/<image name> .
+docker build -t razedulalways/kubeload4
+
+# Push the Docker image to Docker Hub
+docker push <dockerhub account id name>/<image name>
+docker push razedulalways/kubeload4
 
 # Create resources from the service1-rc.yaml file
 kubectl create -f service1-rc.yaml
+kubectl create -f service1-svc.yaml
+kubectl create -f service2-rc.yaml
+kubectl create -f service2-svc.yaml
+kubectl create -f loadbalancer-rc.yaml
 
-# Create resources from the service-svc.yaml file
-kubectl create -f service-svc.yaml
 
 # List all pods in the current namespace
 kubectl get pods
+
+# Open an interactive shell in a running pod
+kubectl exec -it <pod name> /bin/bash
 
 # List all services in the default namespace
 kubectl get svc
@@ -45,9 +55,6 @@ docker build -t <dockerhub account id name>/<image name> .
 
 # Push the Docker image to Docker Hub
 docker push <dockerhub account id name>/<image name>
-
-# Open an interactive shell in a running pod
-kubectl exec -it loadbalancer-rc-9d272 /bin/bash
 
 # Get all services in the default namespace (run on your local machine)
 kubectl get svc -n default

@@ -23,6 +23,9 @@ kubectl get pods
 # Open an interactive shell in a running pod
 kubectl exec -it <pod name> /bin/bash
 
+# Open an interactive shell in a running container into pod
+kubectl exec -it <pod name> -c <service name/container name> -- /bin/sh
+
 # List all services in the default namespace
 kubectl get svc
 
@@ -103,3 +106,8 @@ kubectl create namespace <namespace-name>
 
 # Switch to a different namespace
 kubectl config set-context --current --namespace=<namespace-name>
+
+# get all namespace
+
+kubectl get pods --all-namespaces
+

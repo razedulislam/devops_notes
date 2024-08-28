@@ -30,6 +30,8 @@ docker push razedulalways/i_23_microservice3
 
 ## Run the pod using
 `kubectl apply -f layer7 load balancing.yaml`
+or,
+`kubectl create -f layer7 load balancing.yaml`
 
 ## Run this command to verify that all the containers are up
 `kubectl get pods`
@@ -47,3 +49,23 @@ Watch the output and see that different microservice is getting the call
 
 ## Now use the endpoint to get result out from redis
 `curl localhost:3001/get-hit-count`
+
+## check logs from host machine
+`kubectl logs -f <pod name>`
+
+## check log specific service(container within a pod)
+kubectl logs -f <pod name> -c <service name>
+
+kubectl logs -f layer-7-load-balancing -c redis
+kubectl logs -f layer-7-load-balancing -c microservice1
+kubectl logs -f layer-7-load-balancing -c microservice2
+kubectl logs -f layer-7-load-balancing -c microservice3
+
+
+## Why we are building image using docker ? 
+
+1. Build
+In Kubernetes:
+
+1. Kubernetes itself does not handle the "build" process for container images. Instead, you build Docker images or container images using tools like docker, buildah, or podman, or through CI/CD pipelines.
+2. Once the image is built, it is pushed to a container registry (e.g., Docker Hub, Google Container Registry, AWS ECR).

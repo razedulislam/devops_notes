@@ -31,7 +31,7 @@ A ReplicationController ensures that a specified number of pod replicas are runn
 ReplicaSets are similar to ReplicationControllers but support both equality-based and set-based selectors for more flexible and expressive pod management.
 
 9. What is a Service?
-A Service in Kubernetes provides a stable IP address and DNS name to a set of Pods, ensuring consistent access despite changes in Pod IPs. It also load balances traffic across the Pods.
+A Service in Kubernetes provides a stable IP address and DNS name to a set of Pods, ensuring consistent access despite changes in Pod IPs. It also load balances traffic across the Pods.and also use nodeport for expose external port
 
 10. What is a Node?
 A Node is a host machine in a Kubernetes cluster. It provides the necessary resources for running Pods.

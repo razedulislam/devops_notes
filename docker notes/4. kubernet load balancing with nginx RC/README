@@ -58,6 +58,7 @@ curl http://server1-service:80
 
 # Forward a local port to a port on a Kubernetes service for testing
 kubectl port-forward svc/server1-service 8080:80
+kubectl port-forward svc/server1-service 8082:8080
 
 # Set a specific nodePort for external access to a service
 nodePort: 30002 

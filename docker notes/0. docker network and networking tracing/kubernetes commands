@@ -1,10 +1,13 @@
 #use this command every new container(ubuntu server) after creating pod
 apt update -y
+apt upgrade -y
 apt install net-tools -y
 apt install tcpdump -y
 apt install vim -y
 apt install iputils-ping -y
 
+# ubuntu apt update command not working
+echo -e "nameserver 8.8.8.8\nnameserver 8.8.4.4" | tee -a /etc/resolv.conf
 # Build a Docker image and tag it for Docker Hub
 docker build -t <dockerhub account id name>/<image name> .
 docker build -t razedulalways/kubeload4
@@ -29,6 +32,11 @@ kubectl exec -it <pod name> -c <service name/container name> -- /bin/sh
 # List all services in the default namespace
 kubectl get svc
 
+# describe service
+ kubectl describe service <service name>
+
+# get service enpoint to check configuration
+ kubectl get endpoints <service name>
 # Get details of a specific service named server1-service
 kubectl get svc server1-service
 
@@ -67,6 +75,7 @@ tcpdump -i any port 80 -vv
 
 # Check logs for a specific pod
 kubectl logs <pod name>
+kubectl logs <pod name> -f
 
 # View resource usage (CPU/Memory) in a namespace
 kubectl top pod -n <namespace>

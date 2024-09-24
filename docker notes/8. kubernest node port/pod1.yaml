@@ -2,12 +2,12 @@ apiVersion: v1
 kind: Pod
 metadata:
   labels:
-    service: backend
-  name : simple-dotnet-1
+    service: nginx-service
+  name : nginx1
 spec:
   containers:
-  - image: minhaz1217/simple-dotnet:v2
-    name: simple-dotnet-2
+  - image: nginx
+    name: nginx1
     ports:
     - containerPort: 80
       protocol: TCP

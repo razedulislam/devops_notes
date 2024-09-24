@@ -61,6 +61,9 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 or,
 `docker rm $(docker ps -aq)`
 
+# remove all stopped container
+`docker container prune`
+
 ### Now run the `ifconfig` again and notice that the `veth` is gone. Through this interface traffice passes in the container.
 
 # Run the nginx container again by

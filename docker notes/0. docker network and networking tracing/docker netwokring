@@ -2,6 +2,9 @@
 # At first run 
 `ifconfig`
 
+# get serve ip
+`ip addr`
+
 # If not found install ifconfig by
 `sudo apt install net-tools`
 ### Notice there is only one interface that is `eth0` 

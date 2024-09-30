@@ -84,12 +84,23 @@ A CronJob creates Jobs on a scheduled basis. It is useful for running periodic t
 23.  What is a StatefulSet?
 StatefulSet is a Kubernetes workload API object used to manage stateful applications. It manages the deployment and scaling of a set of Pods and provides guarantees about the ordering and uniqueness of these Pods.
 
-24. What is a Namespace?
+24. What is namespace ?
+Namespace is a isolated environment. in docker every container create a isolation environment using namespace.
+The outer world do not know about this namespace area. it is independent and isolated area.
+
+24. 1 What is a Namespace?
 A namespace is a way to divide cluster resources between multiple users or applications. It provides a scope for names, allowing you to create resources with the same name in different namespaces without conflict.
     
     1. Isolation: Resources in one namespace are logically isolated from those in other namespaces.
     2. Resource Quotas: You can set resource quotas on namespaces to limit resource consumption.
     3. Security: Namespaces can help manage access controls and permissions.
+
+24.2 4 types of namespace
+1. network namespace
+2. volume namespace
+3. process namespace
+4. cgroup namespace
+docker is created using these 4 namespace
 
 25. What is master node ?
 26. What is worker node ?

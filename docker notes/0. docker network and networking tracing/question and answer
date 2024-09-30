@@ -92,8 +92,9 @@ A namespace is a way to divide cluster resources between multiple users or appli
     3. Security: Namespaces can help manage access controls and permissions.
 
 25. What is master node ?
+The master node hosts the Kubernetes control plane and manages the cluster, including scheduling and scaling applications and maintaining the state of the cluster.
 26. What is worker node ?
-
+The worker nodes are responsible for running the containers and executing the workloads.
 27. Explain about master node component?
 
 

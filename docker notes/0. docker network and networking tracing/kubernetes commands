@@ -10,6 +10,8 @@ apt install iputils-ping -y
 <public ip>:8080
 here public_ip=serverip
 port=8080
+test 
+test
 # ubuntu apt update command not working
 echo -e "nameserver 8.8.8.8\nnameserver 8.8.4.4" | tee -a /etc/resolv.conf
 # Build a Docker image and tag it for Docker Hub

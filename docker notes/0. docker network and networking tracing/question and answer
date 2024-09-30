@@ -160,3 +160,6 @@ Example Workflow:
 multiple instances of the application.
 4. Pod Handling: The selected Pod processes the request and returns the response, which is then routed back through the Service, 
 load balancer, and finally to the external user.
+
+
+today devops is a best practice in it firm.

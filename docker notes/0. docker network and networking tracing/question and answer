@@ -119,6 +119,12 @@ if multiple file want to copy: have to use ./ too indicate directory
 if we want to download remote file like from a website and want to copy container directory
 `add https://supportresources.revesoft.com:4430/media/Tools/Web%20Server/jakarta-tomcat-9.0.17.zip .`
 
+30. Why used expose in docker file?
+
+# Expose the port the app runs on. this port will not available outside of container. 
+# this port is for understanding purpose when a developer or devops engineer will work using this dockerfile they will be able
+# to understand easily about the container port
+
 1.	API server:  
 •	the api server works as a gateway of cluster and is the entry point for all REST commands to the cluster. 
 

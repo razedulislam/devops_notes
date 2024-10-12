@@ -1,12 +1,16 @@
 Why need docker user creation ?
-1. Security
-By default, the Docker daemon runs as the root user because it requires elevated privileges to manage system resources like networking, filesystems, and containers. Allowing regular users to run Docker commands as root can be risky, as it could lead to privilege escalation or security vulnerabilities.
+---> Minimizing Security Risks in Application Containers
+Example: Suppose you're running a web application inside a Docker container (like Flask or Nginx). If the container is running as root and the application has a security vulnerability, an attacker who exploits the app could gain root access to the container.
 
-Solution: Docker creates a specific user group (called docker), allowing users to run Docker commands without needing root access. Any user added to the docker group can run Docker commands without using sudo and without being the root user.
+Risk: With root access, the attacker could potentially break out of the container and harm the host system, affecting other containers or services.
+
+Non-root Benefit: By running the app as a non-root user, even if an attacker exploits the app, they only get the limited permissions of that non-root user (e.g., raz). This means they can’t easily escape the container or access sensitive parts of the host system.
 
 
-2. Least Privilege Principle
-3.  Easier Command Execution no need to use sudo command for non root user
+Solution: Creating a non-root custom user limits the potential impact of security breaches. If an attacker compromises the container, they only get access to a limited, unprivileged user account.
+
+Use Case: Applications that handle sensitive data, such as APIs or web services, should be run under a non-root user to follow the principle of least privilege.
+
 
 
 steps:
@@ -18,3 +22,13 @@ steps:
 
 3. access docker container
 `localhost:5000`
+
+4. enter into the docker container as non root user(raz)
+`docker exec -it <container-id> bash`
+
+note: If you want to create a directory or want to delete a file you can not delete except you have given permission
+in this small project raz has full control on /app directory only
+
+Question:
+Can the root user modify or delete any file from /app directory which owner raz?
+Yes, root user has all access, he can do anything in the server. 

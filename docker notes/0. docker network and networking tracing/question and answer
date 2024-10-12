@@ -107,7 +107,17 @@ The master node hosts the Kubernetes control plane and manages the cluster, incl
 26. What is worker node ?
 The worker nodes are responsible for running the containers and executing the workloads.
 27. Explain about master node component?
+28. What is docker file
+Docker file basically set of commands by which we create an image from the base imgae.
+The base base image may be ubuntu, centos, nodejs,nginx etc.
 
+29. add and copy in docker file
+both used for copy one file from host to docker container. we can use . to represent present directory 
+`cp requirements.txt .`
+if multiple file want to copy: have to use ./ too indicate directory
+`cp requirements.txt main.py ./`
+if we want to download remote file like from a website and want to copy container directory
+`add https://supportresources.revesoft.com:4430/media/Tools/Web%20Server/jakarta-tomcat-9.0.17.zip .`
 
 1.	API server:  
 •	the api server works as a gateway of cluster and is the entry point for all REST commands to the cluster. 
@@ -162,4 +172,6 @@ multiple instances of the application.
 load balancer, and finally to the external user.
 
 
+
 today devops is a best practice in it firm.
+

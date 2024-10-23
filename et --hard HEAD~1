@@ -1,0 +1,233 @@
+[33mcommit 037c67d72c53a656cf0cc81bfd6c62c71f8b0903[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mwindows[m[33m)[m
+Author: razedulislam <blindtech2021@gmail.com>
+Date:   Wed Oct 23 23:34:58 2024 +0600
+
+    test
+
+[33mcommit f5a74c64ced560415d893ee1ac891a80216af4b2[m[33m ([m[1;31morigin/windows[m[33m)[m
+Author: razedulislam <blindtech2021@gmail.com>
+Date:   Wed Oct 23 22:01:31 2024 +0600
+
+    formatting documentation
+
+[33mcommit 3ab81d3081944dee52a75959cf9fb7ed43637aae[m
+Author: razedulislam <blindtech2021@gmail.com>
+Date:   Wed Oct 23 21:54:18 2024 +0600
+
+    formatting documentation
+
+[33mcommit 5fe35d7ef566c60f57fe8fdbcd9e8bd203d6028e[m
+Author: razedulislam <blindtech2021@gmail.com>
+Date:   Wed Oct 23 21:43:08 2024 +0600
+
+    documentation for layer4 load balancing
+
+[33mcommit fee6f2ae082e643fc4e6b144da80ebe157af23d3[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: razedulislam <blindtech2021@gmail.com>
+Date:   Wed Oct 16 21:44:43 2024 +0600
+
+    docker compose project
+
+[33mcommit a98876bd7567deac31c7996d2a96dc6a45d74cf0[m
+Author: razedulislam <blindtech2021@gmail.com>
+Date:   Wed Oct 16 16:47:30 2024 +0600
+
+    project directory name changed
+
+[33mcommit aa27e6125a810a71092ac31fc7ba691abcf74e3a[m
+Author: razedulislam <blindtech2021@gmail.com>
+Date:   Wed Oct 16 16:45:42 2024 +0600
+
+    docker compose small project
+
+[33mcommit 843ebdc4e087d918579364ead69f8fe3bef4099f[m
+Author: razedulislam <blindtech2021@gmail.com>
+Date:   Wed Oct 16 12:44:37 2024 +0600
+
+    rearrange repository files
+
+[33mcommit ba224ffdd3c07c32ad93d35f199431e8fffe4a85[m
+Author: razedulislam <blindtech2021@gmail.com>
+Date:   Wed Oct 16 12:38:30 2024 +0600
+
+    file rearranged
+
+[33mcommit 8e59cd7d6a1a598efb1c7f15eb61047e2aa7f1d6[m
+Author: razedulislam <blindtech2021@gmail.com>
+Date:   Wed Oct 16 12:32:45 2024 +0600
+
+    test  from ubuntu
+
+[33mcommit c14285bd9f907fb26201b690892f63cc6574abeb[m
+Author: razedulislam <blindtech2021@gmail.com>
+Date:   Sat Oct 12 22:53:07 2024 +0600
+
+    docker multistage build to reduce image size
+
+[33mcommit 9fe5ae9235ede46428340e1ae89da11f052b047f[m
+Author: razedulislam <blindtech2021@gmail.com>
+Date:   Sat Oct 12 20:37:01 2024 +0600
+
+    why used expose in docker file
+
+[33mcommit 90927224ae256f5d910a16016a52f38f6d3a6bf4[m
+Author: razedulislam <blindtech2021@gmail.com>
+Date:   Sat Oct 12 20:32:15 2024 +0600
+
+    add documentation for docker non root user
+    in the documentation you can easily understand why we are creating non
+    root user for extra security purposes
+
+[33mcommit 496d8fe402785df785e2a15bffa59c77d95977e8[m
+Author: razedulislam <blindtech2021@gmail.com>
+Date:   Sat Oct 12 18:57:49 2024 +0600
+
+    docker custom  user create
+    Creates docker custom user and give permission for that user so that one
+    can login into container without root user access and limit previleges
+
+[33mcommit ef1b27720fd0d752dbb37d3df13eee02ad3f66c5[m
+Author: razedulislam <blindtech2021@gmail.com>
+Date:   Fri Oct 11 20:09:00 2024 +0600
+
+    set up docker project with nginx&persistent volume
+    Set up Docker project with Nginx and persistent volume for data persistence
+
+[33mcommit 5a496e562b87cdb91f19d2a5764fc35ddd18afd0[m
+Author: razedulislam <blindtech2021@gmail.com>
+Date:   Mon Sep 30 15:42:37 2024 +0600
+
+    devops practice
+
+[33mcommit 337b2c852cab5d78227381d9f3a19991c75a1b30[m
+Merge: 570acd6 67c6ff5
+Author: razedulislam <blindtech2021@gmail.com>
+Date:   Mon Sep 30 15:40:25 2024 +0600
+
+    Merge branch 'main' of https://github.com/razedulislam/devops_notes
+
+[33mcommit 570acd67fc4b369c04c710592c4e785b4b45b6f1[m
+Author: razedulislam <blindtech2021@gmail.com>
+Date:   Mon Sep 30 15:39:39 2024 +0600
+
+    added some changes
+
+[33mcommit 67c6ff52d56ef240eaf943a8b167834cf95ecba9[m
+Author: Razedul Islam <110410391+razedulislam@users.noreply.github.com>
+Date:   Mon Sep 30 13:57:14 2024 +0600
+
+    Update question and answer
+    
+    jenkin test4
+
+[33mcommit 0cc6d4f24e770e2f4d73295ee4fd739b8f3dde91[m
+Author: Razedul Islam <110410391+razedulislam@users.noreply.github.com>
+Date:   Mon Sep 30 13:52:33 2024 +0600
+
+    Update docker netwokring
+    
+    jenkin4
+
+[33mcommit 8f9695899151b2fda396008ba991f55c32790f70[m
+Author: Razedul Islam <110410391+razedulislam@users.noreply.github.com>
+Date:   Mon Sep 30 13:31:36 2024 +0600
+
+    Update kubernetes commands
+    
+    jenkin3
+
+[33mcommit 131a2829e0948362787f98e2ac5ade5856d5b7e0[m
+Author: Razedul Islam <110410391+razedulislam@users.noreply.github.com>
+Date:   Mon Sep 30 13:28:39 2024 +0600
+
+    Update kubernetes commands
+    
+    jenkin test3
+
+[33mcommit e3ce4497a9f056474d9cd10ecefb2367af4a6716[m
+Author: Razedul Islam <110410391+razedulislam@users.noreply.github.com>
+Date:   Mon Sep 30 13:10:54 2024 +0600
+
+    Update kubernetes commands
+    
+    jenkin test2
+
+[33mcommit 94b21fd9f8e178eeccf236b07dba5cf37a666c7e[m
+Author: Razedul Islam <110410391+razedulislam@users.noreply.github.com>
+Date:   Mon Sep 30 12:52:55 2024 +0600
+
+    Update kubernetes commands
+    
+    jenkin test
+
+[33mcommit 00cd39bbd30c45ce750d48ca8839d20eccd18d16[m
+Author: razedulislam <blindtech2021@gmail.com>
+Date:   Wed Sep 25 20:36:22 2024 +0600
+
+    docker nodejs app
+
+[33mcommit d90c1e0078395121d6c0f25071c5fdc7a788658e[m
+Author: razedulislam <blindtech2021@gmail.com>
+Date:   Tue Sep 24 21:33:20 2024 +0600
+
+    delete all stopped container
+
+[33mcommit f4a4027868439b297ffc88f619c8a1e6f64c3cfa[m
+Author: razedulislam <blindtech2021@gmail.com>
+Date:   Mon Sep 2 20:08:55 2024 +0600
+
+    7 how kubernetes service works
+
+[33mcommit 0f7dabd54e79577911da117148da647c215a936e[m
+Author: razedulislam <blindtech2021@gmail.com>
+Date:   Sun Sep 1 16:12:17 2024 +0600
+
+    what is service
+
+[33mcommit bec45b1fce202e20352aa809284b64728f7fb383[m
+Author: razedulislam <blindtech2021@gmail.com>
+Date:   Wed Aug 28 21:27:12 2024 +0600
+
+    layer 4 load balancing
+
+[33mcommit c63806c33e9b1389b94eb731ad65dc42ac78f17f[m
+Author: razedulislam <blindtech2021@gmail.com>
+Date:   Tue Aug 27 23:13:35 2024 +0600
+
+    remove some text
+
+[33mcommit 979799fdb6c1debff4b0c85de92d43c731e51865[m
+Author: razedulislam <blindtech2021@gmail.com>
+Date:   Tue Aug 27 23:11:45 2024 +0600
+
+    kubernetes layer 7 load balancing with nginx
+
+[33mcommit 130375f15e9a50c3ec641f233f90bc2dc8e3afe0[m
+Author: razedulislam <blindtech2021@gmail.com>
+Date:   Tue Aug 27 00:49:46 2024 +0600
+
+    added some notes
+
+[33mcommit a41f9eb344c7095986cedc6c850b2af488a06002[m
+Author: razedulislam <blindtech2021@gmail.com>
+Date:   Mon Aug 26 23:40:25 2024 +0600
+
+    docker networking and network tracing, tcpdump use cases
+
+[33mcommit 7446241345f40124ddbf609d2591d0a75f5b605d[m
+Author: razedulislam <blindtech2021@gmail.com>
+Date:   Mon Aug 26 23:29:53 2024 +0600
+
+    added readme file
+
+[33mcommit 1d5d730f6286226ee94b6e609bdc58045700aaf7[m
+Author: razedulislam <blindtech2021@gmail.com>
+Date:   Mon Aug 26 22:54:33 2024 +0600
+
+    kubernets load balancing layer 7
+
+[33mcommit 31b4a04c37b1808e538b03e6aaee6c7800745dfd[m
+Author: Razedul Islam <110410391+razedulislam@users.noreply.github.com>
+Date:   Mon Aug 26 22:17:18 2024 +0600
+
+    added

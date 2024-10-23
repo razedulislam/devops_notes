@@ -31,6 +31,7 @@ A ReplicationController ensures that a specified number of pod replicas are runn
 ReplicaSets are similar to ReplicationControllers but support both equality-based and set-based selectors for more flexible and expressive pod management.
 
 9. What is a Service?
+Service file provides a stable ip which helps to communicates among pods.
 A Service in Kubernetes provides a stable IP address and DNS name to a set of Pods, ensuring consistent access despite changes in Pod IPs. It also load balances traffic across the Pods.and also use nodeport for expose external port
 
 We create a service file which communicates with pods.
@@ -50,8 +51,7 @@ A Load Balancer distributes incoming traffic across multiple Pods to ensure no s
 Pods cannot be accessed externally by default. Exposing an external IP allows access to the services from outside the cluster. LoadBalancer services help expose an external IP for worldwide access.
 
 13. Cluster, Node, Pod, Container, Application Flow Diagram:
-rust
-Copy code
+
 Cluster --> Node --> Pod --> Container --> Application
 
 14. What is a Cluster?

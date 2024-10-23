@@ -8,38 +8,45 @@ apt install vim -y
 apt install iputils-ping -y
 ```
 ## step 1: start the application
-`docker compose up`
+```
+docker compose up
+```
 
 ## step 2: access the application and check load balancing working or not
 check port from docker-compose file
 nginx:
-`http://localhost:8080/`
-
+```
+http://localhost:8080/
+```
 ## app1:
 ```
 http://localhost:5001/
 ```
-
 ## app2:
 ```
 http://localhost:5002/`
 ```
-step 3: enter into two created container
-`docker exec -it <container_id> /bin/bash`
-`docker exec -it 08b0ddb6erf3 /bin/bash`
-`docker exec -it 08b0ddb6203e /bin/bash`
-
+## step 3: enter into two created container
+```
+docker exec -it <container_id> /bin/bash
+docker exec -it 08b0ddb6erf3 /bin/bash
+docker exec -it 08b0ddb6203e /bin/bash
+```
 ## step 4: check available interface
-`ifconfig`
-
+```
+ifconfig
+```
 you will get `eth0` interface there
 
 ## step 5: check traffic from both containercontainer
-`tcpdump -i any eth0`
-
+```
+tcpdump -i any eth0
+```
 ## step 6: ping from container to check communication between conatiner
 enter first container
-``docker exec -it <container_id> /bin/bash`
+```
+docker exec -it <container_id> /bin/bash
+```
 then ping other container using ip port
 
 ## Now to verify that the servers are receiving hit, we follow the logs of those servers
@@ -47,7 +54,6 @@ then ping other container using ip port
 docker logs -f server1
 docker logs -f server2
 ```
-
 
 ## Inspect the servers and find out the ips
 ```

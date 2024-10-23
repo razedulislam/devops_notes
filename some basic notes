@@ -1,3 +1,5 @@
+docker cp <container_id>:/use/share/nginx
+
 1. how docker works in  namespace
 2. how kubernetes works in namespace
 

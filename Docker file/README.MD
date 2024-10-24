@@ -130,3 +130,25 @@ RUN echo "Building version $APP_VERSION"
 LABEL maintainer="you@example.com"
 ```
 **Explanation:** Adds a maintainer label with your email.
+
+
+# Example Dockerfile for a Flask App
+```
+# 1. Base Image
+FROM python:3.8-slim
+
+# 2. Working Directory
+WORKDIR /app
+
+# 3. Copy the application code
+COPY . /app
+
+# 4. Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# 5. Expose the Flask app port
+EXPOSE 5000
+
+# 6. Run the Flask app
+CMD ["python", "app.py"]
+```

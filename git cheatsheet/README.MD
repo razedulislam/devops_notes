@@ -9,3 +9,5 @@ Git is a tool that helps people keep track of changes to files, especially when 
 **Collaboration:** When multiple people are working on the same project, Git helps them work together without messing up each other's work. Everyone can make their changes, and then combine them when ready.
 
 **Branches:** You can create different "branches" to work on new ideas without affecting the main project. Once the idea is ready, you can merge it back into the main project.
+
+## Git commands

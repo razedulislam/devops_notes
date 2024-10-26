@@ -126,6 +126,10 @@ git reset --hard <hash_id>
 git log –oneline
 ```
 
-### suppose you have suppose already in git what have to do
+### suppose you have  already pushed in git what have to do
 
-
+```
+git log
+git reset --hard <hash_id>
+git push -f
+```

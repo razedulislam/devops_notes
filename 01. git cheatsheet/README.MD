@@ -66,7 +66,3 @@ git push -u origin main
 ```
 ### after adding some file or modifying file use below three command
 ```
-Git add .
-git commit -m "changed commit1"
-git push
-```

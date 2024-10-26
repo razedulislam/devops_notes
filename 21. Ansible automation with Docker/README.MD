@@ -46,6 +46,13 @@ OR
 apt update && apt install -y wget
 wget -qO- http://localhost
 ```
+
+## step 7 : debug
+```
+docker inspect <container_id>
+docker logs <container_id>
+```
+
 ## if we want to expose port 
 
 ## Install some dependency if needed

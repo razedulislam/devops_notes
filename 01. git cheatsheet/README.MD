@@ -10,7 +10,6 @@ Git is a tool that helps people keep track of changes to files, especially when 
 
 **Branches:** You can create different "branches" to work on new ideas without affecting the main project. Once the idea is ready, you can merge it back into the main project.
 
-
 ## To set git username and email:
 ```
 git config --global --get user.email
@@ -65,4 +64,72 @@ git remote add origin git@github.com:<github_username>/l<repo_name>.git
 git push -u origin main
 ```
 ### after adding some file or modifying file use below three command
+```
+Git add .
+git commit -m "changed commit1"
+git push
+```
+
+### check git log/git history
+```
+git log
+```
+### check git status
+```
+git status
+```
+
+### check git branch
+```
+git branch
+```
+### create git branch
+```
+git checkout -b <branch_name>
+example:
+git checkout -b dev
+```
+
+### switch any git branch
+```
+git checkout <branch_name>
+example:
+git checkout dev
+```
+
+### Fetch latest code in local machine
+```
+git pull
+```
+
+### Undo the last commit but keep the changes
+```
+git reset --soft HEAD~1
+```
+
+### Undo the last commit and discard changes (hard reset)
+```
+git reset --hard HEAD~1
+```
+
+### Undo the any commit but keep the changes
+```
+git reset <hash_id>
+```
+
+### Undo the last commit and discard changes (hard reset)
+```
+git reset --hard <hash_id>
+```
+### git quick overview of recent changes
+```
+git log –oneline
+```
+
+### suppose you have  already pushed in git what have to do
+
+```
+git log
+git reset --hard <hash_id>
+git push -f
 ```

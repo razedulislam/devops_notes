@@ -1,0 +1,32 @@
+- hosts: localhost
+  become: yes
+  tasks:
+    - name: Update apt package manager
+      apt:
+        update_cache: yes
+
+    - name: Install Apache web server
+      apt:
+        name: apache2
+        state: present
+
+    - name: Deploy a simple HTML file
+      copy:
+        content: |
+          <!DOCTYPE html>
+          <html>
+          <head>
+          <title>Welcome to Ansible Automation</title>
+          </head>
+          <body>
+          <h1>Hello, World!</h1>
+          <p>This page was deployed using Ansible.</p>
+          </body>
+          </html>
+        dest: /var/www/html/index.html
+
+    - name: Ensure Apache is running
+      service:
+        name: apache2
+        state: started
+        enabled: yes

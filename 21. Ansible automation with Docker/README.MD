@@ -6,28 +6,26 @@ Ansible is an open-source automation tool used for configuration management, app
 
 ## Step 1 : Build Dockerfile first
 ```
-docker build -t docker _ansible .
+docker build -t docker_ansible .
 ```
 ## step 2 : Create and start new docker container
 ```
 docker run -d -p 8080:80 --name i_docker_ansible docker_ansible
 ```
+## step 3 : we can start a stop container
+```
+docker start <container_id>
+```
 
-## step 3 : Connect to your docker container
+## step 4 : Connect to your docker container
 
 ```
 docker exec -it <container_id> /bin/bash
 ```
 
-## Step 4 : Create a playbook file and use content for playbook
-
-```
-mkdir -p /ansible_playbooks/webserver_setup
-cd /ansible_playbooks/webserver_setup
-vi webserver_setup.yml
-```
 ## Step 5: Run the playbook
 ```
+/ansible_playbooks
 ansible-playbook webserver_setup.yml
 ```
 ## step 6 : Verify the setup
@@ -48,6 +46,7 @@ OR
 apt update && apt install -y wget
 wget -qO- http://localhost
 ```
+## if we want to expose port 
 
 ## Install some dependency if needed
 ```

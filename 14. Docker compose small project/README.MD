@@ -55,3 +55,9 @@ Step 16: Check networks for Docker containers
 
 Reference:
 https://betterstack.com/community/guides/scaling-docker/docker-compose-getting-started/-
+
+
+
+RUN npm run build
+Purpose: This command compiles the Vue.js app into a production-ready build. The npm run build command is defined in the package.json and typically outputs files into the dist directory.
+Effect: The built Vue.js app is now available in /app/dist.

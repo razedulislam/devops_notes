@@ -52,5 +52,7 @@ Once the image is built, use this command to run the container, mapping port 808
 `docker run --rm -d -p 8080:80 --name <containername> -v <volume_name>:/usr/share/nginx/html <image_name>`
 `docker run --rm -d -p 8080:80 --name my-nginx-container2 -v my-nginx-data:/usr/share/nginx/html my-nginx-volume`
 
+docker run --rm -d -p  27017:27017 --name 14dockercomposesmallproject-database-1 -v /app/test:/usr/share/nginx/html mongo
+
 9. Check again from browser
 `http://localhost:8080/`

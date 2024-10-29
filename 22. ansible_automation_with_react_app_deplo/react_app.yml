@@ -1,0 +1,28 @@
+---
+- name: Deploy React app with Docker
+  hosts: localhost  # Or specify remote hosts if you are deploying to another server
+  become: yes  # Escalates privileges if needed
+  tasks:
+
+    - name: Build the Docker image for React app
+      ansible.builtin.command:
+        cmd: sudo docker build -t my-react-app .
+        chdir: "/home/raj/Desktop/devops_notes/22. ansible_automation_with_react_app_deplo/"  # Navigate to app directory where Dockerfile is
+
+    - name: Remove existing container if it exists
+      ansible.builtin.docker_container:
+        name: my-react-app-container
+        state: absent  # Ensures that any existing container is removed before starting a new one
+
+    - name: Run Docker container for React app
+      ansible.builtin.docker_container:
+        name: my-react-app-container
+        image: my-react-app
+        state: started
+        ports:
+          - "3000:3000"
+        restart_policy: always
+
+    - name: Print completion message
+      ansible.builtin.debug:
+        msg: "React app has been deployed and is running on port 3000!"

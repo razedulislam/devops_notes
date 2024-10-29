@@ -1,9 +1,0 @@
----
-- name: Deploy React app with Docker
-  hosts: localhost  # Or specify remote hosts if you are deploying to another server
-  become: yes  # Escalates privileges if needed
-  tasks:
-        
-    - name: Print completion message
-      ansible.builtin.debug:
-        msg: "React app has been deployed and is running on port 3000!"

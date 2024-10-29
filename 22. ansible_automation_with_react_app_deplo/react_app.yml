@@ -20,7 +20,7 @@
         image: my-react-app
         state: started
         ports:
-          - "3000:3000"
+          - "3002:3000"
         restart_policy: always
         volumes:
           - "/home/raj/Desktop/devops_notes/22. ansible_automation_with_react_app_deplo/data:/app/data"  # Host directory mapped to container directory

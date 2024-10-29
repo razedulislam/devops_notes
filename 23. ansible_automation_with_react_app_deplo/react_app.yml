@@ -1,0 +1,44 @@
+- name: Deploy React app with Docker
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Build the Docker image for React app
+      ansible.builtin.command:
+        cmd: docker build -t my-react-app .
+        chdir: "/home/raj/Desktop/devops_notes/23. ansible_automation_with_react_app_deplo/"
+
+    - name: Tag Docker image for Docker Hub
+      ansible.builtin.command:
+        cmd: docker tag my-react-app razedulalways/my-react-app:latest
+
+    - name: Login to Docker Hub
+      ansible.builtin.command:
+        cmd: echo "{{ lookup('env', 'DOCKER_HUB_PASSWORD') }}" | docker login -u razedulislam2017@gmail.com --password-stdin
+
+    - name: Push Docker image to Docker Hub
+      ansible.builtin.command:
+        cmd: docker push razedulalways/my-react-app:latest
+
+    - name: Remove existing container if it exists
+      ansible.builtin.docker_container:
+        name: my-react-app-container
+        state: absent
+
+    - name: Pull Docker image from Docker Hub
+      ansible.builtin.command:
+        cmd: docker pull razedulalways/my-react-app:latest
+
+    - name: Run Docker container for React app using the pulled image
+      ansible.builtin.docker_container:
+        name: my-react-app-container
+        image: razedulalways/my-react-app:latest
+        state: started
+        ports:
+          - "3004:3000"
+        restart_policy: always
+        volumes:
+          - "/home/raj/Desktop/devops_notes/23. ansible_automation_with_react_app_deplo/data:/app/data"
+
+    - name: Print completion message
+      ansible.builtin.debug:
+        msg: "React app has been deployed and is running on port 3000!"

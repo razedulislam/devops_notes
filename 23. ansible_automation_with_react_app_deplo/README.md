@@ -30,11 +30,51 @@ ansible-playbook ansible-react-app
 ```
 docker inspect y-react-app-container
 ```
+
 ## 6. Restoring Data with Bind Mounts if needed
 ```
 docker run -d -v /host/path/data:/container/path/data my-container
 docker run -d -v /home/raj/Desktop/devops_notes/22. ansible_automation_with_react_app_deplo/data:/app/data
 ```
+
+## To push image in dockerhub
+## step 1: 
+`Firstly crete a reository in docker hub`
+
+## step 2: create a file .bashrc to set password in environment and set actual password
+```
+vi .bashrc
+export DOCKER_HUB_PASSWORD='your_password_here'
+```
+
+## step 3: Apply the changes
+```
+source .bashrc
+```
+## step 4: check the password is working or not
+```
+echo $DOCKER_HUB_PASSWORD
+```
+## if image push not work using ansible playbook
+### build the image manually using dockerfile
+```
+docker build -t my-react-app .
+```
+### Login docker hub using cli. put your dockerhub actual password if required
+```
+sudo docker login -u <dockerhub_username>
+```
+
+### tag your image
+```
+sudo docker tag my-react-app razedulalways/my-react-app:latest
+```
+### Push your image in docker hub
+```
+sudo docker push razedulalways/my-react-app:latest
+```
+
+### will get your set password as output
 
 ##  Optional
 ## using dockerfile without ansible you have to do manually all task

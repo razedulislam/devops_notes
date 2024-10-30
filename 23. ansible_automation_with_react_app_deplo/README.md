@@ -45,7 +45,6 @@ docker run -d -v /home/raj/Desktop/devops_notes/22. ansible_automation_with_reac
 
 # Protect your app sensitive data using .env file
 ## step 1: 
-`Firstly crete a reository in docker hub`
 
 ## step 2: create a file .bashrc to set password in environment and set actual password
 ```
@@ -66,7 +65,12 @@ echo $DOCKER_HUB_PASSWORD
 ```
 ### will get your set password as output
 
+# Dockerhub image not pushed or denied issue when try to push image
 ## if image push not work using ansible playbook
+
+Step 1: 
+`Firstly crete a reository in docker hub`
+
 ### build the image manually using dockerfile
 ```
 docker build -t my-react-app .
@@ -86,7 +90,13 @@ sudo docker push razedulalways/my-react-app:latest
 ```
 
 # image version controlling
+### When you will change the code or configuration of yml, you should give a new image tag so that you can use previous image if there is any issue in your new build imaged
 
+## Example :
+```
+docker build -t my-react-app .
+docker tag my-react-app razedulalways/my-react-app:latestv1
+```
 
 ##  Optional
 ## using dockerfile without ansible you have to do manually all task

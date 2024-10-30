@@ -1,0 +1,30 @@
+# Title: Automating React App Deployment with Ansible and Docker
+
+This project outlines an automated workflow for deploying a React application using Docker and Ansible to improve consistency and ease of deployment. Below is a brief overview of the setup and key steps:
+
+## Steps to Deploy the React Project
+1. Run Ansible Playbook: Simplify deployment by running ansible-playbook ansible-react-app to automate build, container creation, and Docker Hub image pushing.
+
+2. Check Application: Verify the deployment by accessing http://localhost:3000/ in the browser.
+
+3. Bind Mount Configuration: Add a bind mount in the volumes section to persist data between the container and the host.
+
+4. Verify Bind Mount: Use docker exec -it my-react-app-container ls /app/data to confirm data is mounted correctly.
+
+5. Rebuild & Deploy: Redeploy anytime by re-running the Ansible playbook.
+
+6. Check Docker Volume: Inspect the volume setup with docker inspect my-react-app-container.
+
+**Protect Sensitive Data**
+
+Store sensitive information, such as DOCKER_HUB_PASSWORD, in an environment variable in .env, set permissions, and source it from .bashrc.
+
+**Troubleshooting Docker Hub Image Push**
+
+If issues arise when pushing images, manually build, tag, and push using Docker CLI. Ensure your Docker Hub repository is created and accessible.
+
+**Version Control for Images**
+
+Use version tags for each new image build, e.g., razedulalways/my-react-app:v1, to allow rollback if needed.
+
+This automation project ensures seamless deployment, simplifies updates, and safeguards sensitive data for your React app deployment.

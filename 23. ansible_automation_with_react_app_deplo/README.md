@@ -1,3 +1,9 @@
+### ansible secret
+### ansible role
+### ansible galaxy
+
+
+
 ## Firstly I tried without ansible, in that time I build the image and run the container manually, which is not convenient. thats why I am using ansible playbook
 
 ## Steps to start this react project

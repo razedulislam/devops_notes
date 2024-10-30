@@ -43,24 +43,29 @@ docker run -d -v /host/path/data:/container/path/data my-container
 docker run -d -v /home/raj/Desktop/devops_notes/22. ansible_automation_with_react_app_deplo/data:/app/data
 ```
 
-## To push image in dockerhub
+# Protect your app sensitive data using .env file
 ## step 1: 
 `Firstly crete a reository in docker hub`
 
 ## step 2: create a file .bashrc to set password in environment and set actual password
 ```
-vi .bashrc
+vi ~/.env
 export DOCKER_HUB_PASSWORD='your_password_here'
 ```
-
-## step 3: Apply the changes
+## step 3. change the permision 
 ```
-source .bashrc
+chmod 600 ~/.env
 ```
-## step 4: check the password is working or not
+## step 4: Apply the changes
+```
+source ~/.env
+```
+## step 5: check the password is working or not
 ```
 echo $DOCKER_HUB_PASSWORD
 ```
+### will get your set password as output
+
 ## if image push not work using ansible playbook
 ### build the image manually using dockerfile
 ```
@@ -80,7 +85,8 @@ sudo docker tag my-react-app razedulalways/my-react-app:latest
 sudo docker push razedulalways/my-react-app:latest
 ```
 
-### will get your set password as output
+# image version controlling
+
 
 ##  Optional
 ## using dockerfile without ansible you have to do manually all task

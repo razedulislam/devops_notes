@@ -226,3 +226,37 @@ git commit --amend
 git add file-you-forgot.txt
 git commit --amend
 ```
+
+### Edit an older commit
+#### 0. Get logs which you want to edit
+```
+git log
+git log --oneline
+```
+#### 1. Start an Interactive Rebase:
+```
+git rebase -i HEAD~N
+```
+#### 2. Choose the Commit to Edit:
+```
+edit 489e5b4 test5
+pick b5885c3 test file adds
+pick a9571bc some other commit
+```
+#### 3. Modify the Commit:
+```
+git add <modified-file>
+```
+#### 4. ammends this commit
+```
+git commit --amend
+```
+#### Continue the Rebase: Once you are done editing, continue the rebase process:
+```
+git rebase --continue
+```
+#### Warning: If you push to a shared branch (e.g., origin/main or origin/feature-branch), be cautious. Editing commits changes the commit history, so you'll need to force-push:
+
+```
+git push origin feature-branch --force
+```

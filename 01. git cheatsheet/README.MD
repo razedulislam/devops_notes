@@ -168,3 +168,36 @@ Once all conflicts are resolved, complete the merge:
 git commit
 git push origin main
 ```
+
+### Git rebash
+Assume you have a feature-branch that is behind main. You want to rebase feature-branch onto main to update it.
+
+#### Step-by-Step Guide:
+##### Checkout the Branch You Want to Rebase:
+```
+git checkout feature-branch
+```
+##### Rebase Onto main:
+```
+git rebase main
+```
+
+##### Resolve Any Rebase Conflicts: 
+```
+git add <resolved-file>
+```
+
+##### continue rebase 
+```
+git rebase --continue
+```
+
+###### If you want to stop the rebase and go back to how things were before the rebase started:
+```
+git rebase --abort
+```
+##### Finish and Update the Remote Branch:
+```
+git push origin feature-branch --force
+```
+![alt text](image.png)

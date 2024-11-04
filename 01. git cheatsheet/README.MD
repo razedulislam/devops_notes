@@ -201,6 +201,12 @@ git rebase --abort
 git push origin feature-branch --force
 ```
 
+### Edit last commit using rebase
+```
+git rebase -i
+git rebase --continue
+```
+
 
 ### suppose you have hard reset and delete all chanages
 #### Accidently you have used this command
@@ -226,6 +232,7 @@ git commit --amend
 git add file-you-forgot.txt
 git commit --amend
 ```
+
 
 ### Edit an older commit
 #### 0. Get logs which you want to edit

@@ -200,4 +200,3 @@ git rebase --abort
 ```
 git push origin feature-branch --force
 ```
-![alt text](image.png)

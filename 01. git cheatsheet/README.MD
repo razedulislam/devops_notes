@@ -133,3 +133,38 @@ git log
 git reset --hard <hash_id>
 git push -f
 ```
+### Git merge
+Imagine you are working on a project with a repository that has a main branch. You create a new feature branch called feature-branch to add new functionality to the project. Once you've made changes and committed them to feature-branch, you want to merge these changes into main.
+
+#### Step-by-Step Guide:
+##### Create a New Branch and Switch to It:
+```
+git checkout -b feature-branch
+```
+##### Make Changes and Commit Them: 
+```
+git add .
+git commit -m "Add new feature implementation"
+```
+##### Switch Back to main Branch:
+```
+git checkout main
+```
+
+##### Ensure main is Up to Date: 
+```
+git pull origin main
+```
+##### Merge feature-branch into main:
+```
+git merge feature-branch
+```
+##### Resolve Any Merge Conflicts (If Necessary): 
+```
+git add <resolved-file>
+```
+Once all conflicts are resolved, complete the merge:
+```
+git commit
+git push origin main
+```

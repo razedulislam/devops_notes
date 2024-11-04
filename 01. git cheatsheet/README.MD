@@ -200,3 +200,29 @@ git rebase --abort
 ```
 git push origin feature-branch --force
 ```
+
+
+### suppose you have hard reset and delete all chanages
+#### Accidently you have used this command
+```
+git reset --hard <hash-id>
+```
+#### Undo again the reset changes files and codes using two commands 
+```
+git reflog
+git reset --hard <commit-id>
+```
+##### How will you get this commit id?
+when use git reflog you will get your deleted commit in this reflog history, for example my commit like `adds reset commands in git cheatsheet`
+in this line you will get the hash id.
+
+### Git ammend
+#### edit last commit
+```
+git commit --amend
+```
+#### if you want to changes something and want to add this changes with last commit
+```
+git add file-you-forgot.txt
+git commit --amend
+```

@@ -268,3 +268,46 @@ git rebase --continue
 ```
 git push origin feature-branch --force
 ```
+
+## Keeping Your Fork and Branches Up-to-Date with the Original Repository
+```
+git remote add upstream <original_repository_url>
+git remote -v
+git fetch upstream
+git checkout main
+git merge upstream/main
+git checkout test-branch
+git rebase main
+```
+### step 1: Make sure you are in the root directory of your local repository:
+```
+D:\razedul2024\devops_notes
+```
+
+### step 2: Add the upstream remote by using the following command:
+```
+git remote add upstream <original_repository_url>
+```
+### step 3: Verify that the upstream remote has been added correctly:
+```
+git remote -v
+```
+### Step 4: Fetch Updates from the Upstream Repository
+```
+git fetch upstream
+```
+
+### step 5: Ensure you are on your main branch if you want to sync it
+```
+git checkout main
+```
+### Step 6: Merge the changes from upstream/main into your local main branch
+```
+git merge upstream/main
+or
+git rebase upstream/main
+```
+###  Step 7: Update Your Feature Branch
+```
+git checkout test-branch
+```
